@@ -1,0 +1,52 @@
+   0.304713999s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint: stale: changed "/home/varun/Desktop/rust-projects/your_os/src/vga_buffer.rs"
+   0.304770994s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint:           (vs) "/home/varun/Desktop/rust-projects/your_os/target/x86_64-your_os/debug/.fingerprint/your_os-238e796afa9227a9/dep-bin-your_os"
+   0.304784497s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1775728942, nanos: 121589596 } < FileTime { seconds: 1775729293, nanos: 135977673 }
+   0.305185636s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint: fingerprint dirty for your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os)/Check { test: false }/TargetInner { name: "your_os", doc: true, ..: with_path("/home/varun/Desktop/rust-projects/your_os/src/main.rs", Edition2024) }
+   0.305243202s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/varun/Desktop/rust-projects/your_os/target/x86_64-your_os/debug/.fingerprint/your_os-238e796afa9227a9/dep-bin-your_os", reference_mtime: FileTime { seconds: 1775728942, nanos: 121589596 }, stale: "/home/varun/Desktop/rust-projects/your_os/src/vga_buffer.rs", stale_mtime: FileTime { seconds: 1775729293, nanos: 135977673 } }))
+   0.308708375s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint: fingerprint error for your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os)/Check { test: true }/TargetInner { name: "your_os", doc: true, ..: with_path("/home/varun/Desktop/rust-projects/your_os/src/main.rs", Edition2024) }
+   0.308746779s  INFO prepare_target{force=false package_id=your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os) target="your_os"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/varun/Desktop/rust-projects/your_os/target/x86_64-your_os/debug/.fingerprint/your_os-befaa4c2adb74b48/test-bin-your_os`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/fb27476aaf1012f1f6ace6306f9b990e0d989c31/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+    Checking your_os v0.1.0 (/home/varun/Desktop/rust-projects/your_os)
+error: could not compile `your_os` (bin "your_os") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `your_os` (bin "your_os" test) due to 1 previous error
