@@ -43,3 +43,6 @@ cargo run
 ```
 
 The bootimage tool handles building the kernel and packaging it into a bootable disk image automatically.
+
+ ## A note on the code
+This project is written entirely by hand. No AI tools are used to generate or assist with any part of the code. Every line is written, understood, and debugged manually, which is the whole point.
